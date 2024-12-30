@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Data Extractor</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 300px;
+        }
+
+        h1 {
+            color: #f0f0f0;
+        }
+
+        label {
+            color: #f0f0f0;
+        }
+
+        /* Set a fixed width for both input elements */
+        input[type="text"],
+        input[type="file"] {
+            width: 93.7%; /* Make both inputs take up 100% of the container's width */
+            background-color: #555;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* Style the file input button */
+        input[type="file"]::file-selector-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="file"]::file-selector-button:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Upload a PDF</h1>
+        <form action="/index" method="POST" enctype="multipart/form-data">
+            <label for="pdf">Choose a PDF</label>
+            <input type="file" id="pdf" name="pdf" required>
+            <label for="email">Enter e-mail:</label><br>
+            <input type="text" id="email" name="email" required><br>
+            <input type="submit" value="Extract">
+        </form>
+    </div>
+
+</body>
+
+</html>
